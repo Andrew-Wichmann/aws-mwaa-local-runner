@@ -3,7 +3,12 @@
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:2.7.1": {
             "moby": true
-        }
+        },
+        "ghcr.io/devcontainers/features/aws-cli:1": {}
+    },
+    "containerEnv": {
+        "AWS_CONFIG_FILE": "${containerWorkspaceFolder}/.aws/config",
+        "AWS_SHARED_CREDENTIALS_FILE": "${containerWorkspaceFolder}/.aws/credentials"
     },
     "postCreateCommand": "pip install -r requirements/requirements.txt && ./mwaa-local-env build-image"
 }
