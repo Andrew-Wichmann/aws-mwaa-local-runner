@@ -4,5 +4,6 @@
         "ghcr.io/devcontainers/features/docker-in-docker:2.7.1": {
             "moby": true
         }
-    }
+    },
+    "postCreateCommand": "pip install -r requirements/requirements.txt && ./mwaa-local-env build-image"
 }
